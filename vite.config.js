@@ -10,10 +10,19 @@ export default defineConfig({
     cssCodeSplit: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          three: ['three', '@react-three/fiber', '@react-three/drei'],
-          motion: ['framer-motion'],
-          map: ['leaflet', 'react-leaflet'],
+        // Updated manualChunks to use the required function syntax
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('three') || id.includes('@react-three')) {
+              return 'three';
+            }
+            if (id.includes('framer-motion')) {
+              return 'motion';
+            }
+            if (id.includes('leaflet') || id.includes('react-leaflet')) {
+              return 'map';
+            }
+          }
         },
       },
     },
