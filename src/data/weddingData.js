@@ -43,14 +43,8 @@ export const weddingData = {
   mapsUrl: 'https://www.google.com/maps/place/Ladislawa+Clubhouse/@7.0968909,125.6069144,17z/data=!4m7!3m6!1s0x32f96cff051dd9af:0xe1566d10d2b8d2b2!4b1!8m2!3d7.0968909!4d125.6069144!16s%2Fg%2F11f31ty9mf?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D',
 },
   entourage: {
-    'Best Man': ['Chris John Allan Enriquez'],
-    'Maid of Honor': ['Dece Ryle Krysstl G. Enriquez'],
-    Groomsmen: ['Kento Kato', 'Joshua Raphael Gayoba', 'Jhack Reyes'],
-    Bridesmaids: ['Lea Jean Baruis', 'Aizalie Keith Gayoba', 'Schenley Dee Gayoba'],
-    'Flower Girls': ['Aiyana Julia Gayoba', 'Cyhra Rayne Ucheena Gayoba', 'Crisha Mae Meñoza'],
-    'Ring Bearers': ['Eli Dylan Raf Cuyos'],
-    'Coin Bearers': ['Albert John Bigonte Jr.'],
-    'Mass Offerors': ['Jazzle Picol', 'Merry Joy Gabriel', 'Bern Padilla', 'Joshua Reyes'],
+    'Parents of the Groom': ['JCecelia Gabriel', 'Pablito Valmoria'],
+    'Parents of the Bride': ['Leah Gayoba', 'Rafael Gayoba'],
     Ninongs: [
     'Joseph Aguelo',
     'Bernie Bestre',
@@ -68,7 +62,6 @@ export const weddingData = {
     'Romeo Ticar',
     'Felix Chavez'
   ],
-
   Ninangs: [
     'Juliet Apis',
     'Rosalie Bestre',
@@ -81,6 +74,18 @@ export const weddingData = {
     'Cynthia Valmoria',
     'Jocelyn Aca'
   ],
+    'Best Man': ['Chris John Allan Enriquez'],
+    'Maid of Honor': ['Dece Ryle Krysstl G. Enriquez'],
+    Groomsmen: ['Kento Kato', 'Joshua Raphael Gayoba', 'Jhack Reyes'],
+    Bridesmaids: ['Lea Jean Baruis', 'Aizalie Keith Gayoba', 'Schenley Dee Gayoba'],
+    'Candle Sponsors': ['Mhelca Gayoba', 'Francis Mark Ybañez'],
+    'Veil Sponsors': ['Lovely Mae Cellan', 'Cris Mar Cellan'],
+    'Cord Sponsors': ['Efren Camagan', 'Santa Camagan'],
+    'Bible Bearers': ['Feb Zhykiel Camagan'],
+    'Ring Bearers': ['Eli Dylan Raf Cuyos'],
+    'Coin Bearers': ['Albert John Bigonte Jr.'],
+    'Flower Girls': ['Aiyana Julia Gayoba', 'Cyhra Rayne Ucheena Gayoba', 'Crisha Mae Meñoza'],
+    'Mass Offerors': ['Jazzle Picol', 'Merry Joy Gabriel', 'Bern Padilla', 'Joshua Reyes'],
   },
   dressCode: [
     { name: 'Olive Green', hex: '#A5A93D' },
