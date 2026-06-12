@@ -10,6 +10,7 @@ import {
   FiChevronDown,
 } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
+import { weddingData } from '../../data/weddingData';
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -26,12 +27,35 @@ export default function RSVP() {
   const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const change = (e) => {
+    const { name, value } = e.target;
     setForm({
       ...form,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+
+    if (name === 'name' && value.trim()) {
+      const filtered = weddingData.guests.filter((guest) =>
+        guest.toLowerCase().includes(value.toLowerCase())
+      );
+      setSuggestions(filtered);
+      setShowSuggestions(true);
+    } else if (name === 'name') {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  };
+
+  const selectSuggestion = (name) => {
+    setForm({
+      ...form,
+      name,
+    });
+    setSuggestions([]);
+    setShowSuggestions(false);
   };
 
   const submit = async (e) => {
@@ -43,6 +67,8 @@ export default function RSVP() {
 
     if (!form.name.trim()) {
       next.name = 'Full name is required.';
+    } else if (!weddingData.guests.some((guest) => guest.toLowerCase() === form.name.toLowerCase())) {
+      next.name = 'Please select a name from the suggestions. Your name must be in our guest list.';
     }
 
     if (
@@ -247,37 +273,59 @@ export default function RSVP() {
                     error={errors.name}
                     icon={<FiUser />}
                   >
-                    <input
-                      name="name"
-                      value={form.name}
-                      onChange={change}
-                      disabled={loading}
-                      className="
-                        w-full
-                        rounded-2xl
-                        border
-                        border-white/35
-                        bg-white/15
-                        px-4
-                        py-3.5
-                        text-sm
-                        text-white
-                        outline-none
-                        backdrop-blur-xl
-                        transition
-                        duration-300
-                        placeholder:text-white/45
-                        hover:border-white/55
-                        focus:border-[#A5A93D]
-                        focus:bg-white/20
-                        focus:shadow-[0_0_0_4px_rgba(165,169,61,0.15)]
-                        disabled:cursor-not-allowed
-                        disabled:opacity-60
-                        sm:text-base
-                      "
-                      placeholder="Your complete name"
-                      autoComplete="name"
-                    />
+                    <div className="relative">
+                      <input
+                        name="name"
+                        value={form.name}
+                        onChange={change}
+                        onFocus={() => form.name.trim() && setShowSuggestions(true)}
+                        disabled={loading}
+                        className="
+                          w-full
+                          rounded-2xl
+                          border
+                          border-white/35
+                          bg-white/15
+                          px-4
+                          py-3.5
+                          text-sm
+                          text-white
+                          outline-none
+                          backdrop-blur-xl
+                          transition
+                          duration-300
+                          placeholder:text-white/45
+                          hover:border-white/55
+                          focus:border-[#A5A93D]
+                          focus:bg-white/20
+                          focus:shadow-[0_0_0_4px_rgba(165,169,61,0.15)]
+                          disabled:cursor-not-allowed
+                          disabled:opacity-60
+                          sm:text-base
+                        "
+                        placeholder="Your complete name"
+                        autoComplete="off"
+                      />
+                      {showSuggestions && suggestions.length > 0 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -4 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -4 }}
+                          className="absolute top-full z-10 mt-1 w-full rounded-2xl border border-white/35 bg-white/90 backdrop-blur-xl shadow-lg"
+                        >
+                          {suggestions.slice(0, 5).map((suggestion, idx) => (
+                            <button
+                              key={idx}
+                              type="button"
+                              onClick={() => selectSuggestion(suggestion)}
+                              className="w-full px-4 py-2.5 text-left text-sm text-black transition hover:bg-white/20 first:rounded-t-xl last:rounded-b-xl"
+                            >
+                              {suggestion}
+                            </button>
+                          ))}
+                        </motion.div>
+                      )}
+                    </div>
                   </Field>
 
                   <Field
