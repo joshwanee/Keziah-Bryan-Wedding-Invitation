@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
+import pic1 from '../../pictures/pic1.jpg';
+import pic2 from '../../pictures/pic2.jpg';
+import pic3 from '../../pictures/pic3.jpg';
+import pic4 from '../../pictures/pic4.jpg';
+import pic5 from '../../pictures/pic5.jpg';
+import pic6 from '../../pictures/pic6.jpg';
 
 const items = [
-  { src: '/images/couple-hero.jpg', pos: 'object-center' },
-  { src: '/images/couple-hero.jpg', pos: 'object-left' },
-  { src: '/images/couple-hero.jpg', pos: 'object-right' },
-  { src: '/images/couple-hero.jpg', pos: 'object-[45%_30%]' },
-  { src: '/images/couple-hero.jpg', pos: 'object-[55%_65%]' }
+  { src: pic1, pos: 'object-center' },
+  { src: pic2, pos: 'object-left' },
+  { src: pic3, pos: 'object-right' },
+  { src: pic4, pos: 'object-[45%_30%]' },
+  { src: pic5, pos: 'object-[55%_65%]' },
+  { src: pic6, pos: 'object-[50%_20%]' }
 ];
 
 export default function Gallery() {

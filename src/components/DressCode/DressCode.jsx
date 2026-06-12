@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { weddingData } from '../../data/weddingData';
+import outfitExample from '../../pictures/outfit-example2.png';
 
 export default function DressCode() {
   return (
@@ -16,6 +17,18 @@ export default function DressCode() {
           Olive Green and Emerald Green
           palette.
         </p>
+
+        <div className="mx-auto mt-8 max-w-xl space-y-3 text-center text-white">
+          <p className="text-base font-semibold">
+            <span className="font-bold text-amber-200">Principal Sponsors</span> - Formal
+          </p>
+          <p className="text-base font-semibold">
+            <span className="font-bold text-amber-200">Guests</span> - Semi Formal
+          </p>
+          <p className="text-base italic font-bold">
+            Avoid wearing sandos and shorts
+          </p>
+        </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-5">
           {weddingData.dressCode.map((c, i) => (
@@ -34,6 +47,14 @@ export default function DressCode() {
               </p>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <img
+            src={outfitExample}
+            alt="Outfit Examples"
+            className="w-full max-w-[180px]"
+          />
         </div>
       </div>
     </section>
