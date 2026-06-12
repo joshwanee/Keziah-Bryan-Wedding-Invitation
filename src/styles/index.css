@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+  --font-script: "Great Vibes", cursive;
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Poppins", sans-serif;
+}
 
 :root {
   color: #183b35;

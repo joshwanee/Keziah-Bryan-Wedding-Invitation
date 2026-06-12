@@ -43,7 +43,7 @@ export const weddingData = {
   mapsUrl: 'https://www.google.com/maps/place/Ladislawa+Clubhouse/@7.0968909,125.6069144,17z/data=!4m7!3m6!1s0x32f96cff051dd9af:0xe1566d10d2b8d2b2!4b1!8m2!3d7.0968909!4d125.6069144!16s%2Fg%2F11f31ty9mf?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D',
 },
   entourage: {
-    'Parents of the Groom': ['JCecelia Gabriel', 'Pablito Valmoria'],
+    'Parents of the Groom': ['Cecelia Gabriel', 'Pablito Valmoria'],
     'Parents of the Bride': ['Leah Gayoba', 'Rafael Gayoba'],
     Ninongs: [
     'Mr. Joseph Aguelo',
