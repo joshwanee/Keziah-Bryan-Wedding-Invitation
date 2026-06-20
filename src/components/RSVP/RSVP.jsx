@@ -10,7 +10,7 @@ import {
   FiChevronDown,
 } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
-import { weddingData } from '../../data/weddingData';
+import { weddingData, allGuests } from '../../data/weddingData';
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -38,7 +38,7 @@ export default function RSVP() {
     });
 
     if (name === 'name' && value.trim()) {
-      const filtered = weddingData.guests.filter((guest) =>
+      const filtered = allGuests.filter((guest) =>
         guest.toLowerCase().includes(value.toLowerCase())
       );
       setSuggestions(filtered);
@@ -67,7 +67,7 @@ export default function RSVP() {
 
     if (!form.name.trim()) {
       next.name = 'Full name is required.';
-    } else if (!weddingData.guests.some((guest) => guest.toLowerCase() === form.name.toLowerCase())) {
+    } else if (!allGuests.some((guest) => guest.toLowerCase() === form.name.toLowerCase())) {
       next.name = 'Please select a name from the suggestions. Your name must be in our guest list.';
     }
 

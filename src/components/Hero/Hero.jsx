@@ -3,7 +3,7 @@ import { FiArrowDown, FiHeart } from 'react-icons/fi';
 import { weddingData } from '../../data/weddingData';
 import main from '../../pictures/main.jpg';
 
-export default function Hero() {
+export default function Hero({ onViewGuest }) {
   const { couple } = weddingData;
 
   return (
@@ -148,13 +148,14 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
-            <a
-              href="#story"
+            <button
+              type="button"
+              onClick={onViewGuest}
               className="pill-button bg-amber-200 text-[#064E31] hover:-translate-y-1 hover:bg-amber-100"
             >
-              View Invitation
+              View Guest
               <FiArrowDown className="ml-2" />
-            </a>
+            </button>
 
             <a
               href="#rsvp"

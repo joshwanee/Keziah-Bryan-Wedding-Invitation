@@ -1,7 +1,8 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
 
 import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero/Hero';
+import GuestList from '../components/GuestList/GuestList';
 import Countdown from '../components/Countdown/Countdown';
 import LoveStory from '../components/LoveStory/LoveStory';
 import EventDetails from '../components/EventDetails/EventDetails';
@@ -16,12 +17,18 @@ import Footer from '../components/Footer/Footer';
 const VenueMap = lazy(() => import('../components/Map/VenueMap'));
 
 export default function Home() {
+  const [isGuestModalOpen, setGuestModalOpen] = useState(false);
+
   return (
     <>
       <Navbar />
 
       <main>
-        <Hero />
+        <Hero onViewGuest={() => setGuestModalOpen(true)} />
+        <GuestList
+          isOpen={isGuestModalOpen}
+          onClose={() => setGuestModalOpen(false)}
+        />
         <LoveStory />
         <Countdown />
         <EventDetails />
