@@ -172,7 +172,7 @@ export const weddingData = {
       "Jay Saraum",
       "Rodin Lumogal",
       "Judy Ann Cosgafa",
-      "Dodong",
+      "Roxiem Galido",
       "Chris Anne Mascariñas",
       "Aileen Alipio"
     ],
@@ -208,7 +208,7 @@ export const weddingData = {
       "Krysstl Enriquez",
       "Chris Enriquez",
       "Schenley Dee Gayoba",
-      "Lea Gabriel",
+      "Lea Jean Baruis",
       "Aizalie Keith Gayoba",
       "Kento Kato",
       "Joshua Gayoba",
